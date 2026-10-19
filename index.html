@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#ffffff">
+<title>Skon Flexipack</title>
+<meta name="description" content="Plain and printed milk pouches, packing film rolls and lamination for dairies, bakeries and food brands. Factory at MIDC Waluj, Chh. Sambhajinagar, since 2013.">
+<script>
+  try { if (localStorage.getItem("skon-theme") === "dark") document.documentElement.setAttribute("data-theme", "dark"); } catch (e) {}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #ffffff;
+  --film: #f1f5f9;
+  --ink: #15203b;
+  --muted: #586379;
+  --line: #dde3eb;
+  --cyan: #0098d8;
+  --cyan-text: #0074ad;
+  --magenta: #e2007a;
+  --yellow: #ffc700;
+  --key: #15203b;
+  --wa: #128c4a;
+  --wa-ink: #ffffff;
+  --strip: #15203b;
+  --strip-ink: #ffffff;
+  --focus: #e2007a;
+  --font: "Archivo", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  --paper: #0e1528;
+  --film: #172038;
+  --ink: #eef2f8;
+  --muted: #a2adc2;
+  --line: #27324d;
+  --cyan: #2fb4ef;
+  --cyan-text: #5cc6f4;
+  --magenta: #ff3d9e;
+  --yellow: #ffd23f;
+  --key: #15203b;
+  --wa: #1fae5f;
+  --wa-ink: #04190c;
+  --strip: #070c19;
+  --strip-ink: #eef2f8;
+  --focus: #ffd23f;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; overflow-x: clip; scroll-behavior: smooth; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.55;
+  padding-bottom: calc(84px + env(safe-area-inset-bottom));
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 6px; }
+.wrap { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+.ico { width: 18px; height: 18px; flex: none; }
+
+/* Contact strip */
+.strip { background: var(--strip); color: var(--strip-ink); font-size: 0.84rem; }
+.strip .wrap { display: flex; align-items: center; gap: 4px 16px; min-height: 40px; flex-wrap: wrap; }
+.strip a { display: inline-flex; align-items: center; gap: 6px; text-decoration: none; padding: 8px 0; }
+.strip a:hover { text-decoration: underline; }
+.strip .where { display: none; margin-left: auto; opacity: 0.75; }
+.cmyk { display: flex; height: 4px; }
+.cmyk span { flex: 1; }
+.cmyk .c { background: var(--cyan); } .cmyk .m { background: var(--magenta); }
+.cmyk .y { background: var(--yellow); } .cmyk .k { background: var(--key); }
+:root[data-theme="dark"] .cmyk .k { background: #3a4766; }
+
+/* Header */
+.head { border-bottom: 1px solid var(--line); background: var(--paper); position: sticky; top: 0; z-index: 20; }
+.head .wrap { display: flex; align-items: center; gap: 12px; height: 64px; }
+.logo { width: 40px; height: 40px; border-radius: 10px; object-fit: contain; background: #fff; border: 1px solid var(--line); padding: 3px; flex: none; }
+.logo.mono { display: grid; place-items: center; background: var(--cyan); color: #fff; border: 0; font-weight: 800; font-stretch: 120%; }
+.name { line-height: 1.15; }
+.name b { display: block; font-size: 1.05rem; font-stretch: 112%; font-weight: 750; letter-spacing: -0.01em; }
+.name small { font-size: 0.78rem; color: var(--muted); }
+.head nav { display: none; margin-left: auto; gap: 22px; font-size: 0.95rem; }
+.head nav a { text-decoration: none; color: var(--muted); }
+.head nav a:hover { color: var(--ink); }
+.theme {
+  margin-left: auto; width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--line);
+  background: var(--paper); display: grid; place-items: center; cursor: pointer;
+}
+.theme .moon { display: block; } .theme .sun { display: none; }
+:root[data-theme="dark"] .theme .moon { display: none; }
+:root[data-theme="dark"] .theme .sun { display: block; }
+
+/* Hero */
+.hero { padding: 36px 0 44px; display: grid; gap: 32px; }
+h1 {
+  font-size: clamp(2.2rem, 9.6vw, 4.1rem); line-height: 1.0; letter-spacing: -0.025em;
+  font-weight: 780; font-stretch: 116%; max-width: 13ch;
+}
+.lead { margin-top: 18px; color: var(--muted); font-size: 1.06rem; max-width: 46ch; }
+.ctas { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+  min-height: 52px; padding: 0 20px; border-radius: 999px; text-decoration: none;
+  font-weight: 650; font-size: 1rem;
+}
+.btn.wa { background: var(--wa); color: var(--wa-ink); }
+.btn.line { border: 1.5px solid var(--ink); }
+.facts { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 26px; font-size: 0.9rem; color: var(--muted); list-style: none; }
+.facts li { display: flex; align-items: center; gap: 7px; }
+.facts li::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--c, var(--cyan)); }
+.facts li:nth-child(2) { --c: var(--magenta); }
+.facts li:nth-child(3) { --c: var(--yellow); }
+
+/* Pouch illustration */
+.press {
+  background: var(--film); border-radius: 28px; position: relative; overflow: hidden;
+  aspect-ratio: 16 / 13; display: grid; place-items: center;
+}
+.press svg { width: 100%; height: 100%; }
+.press .reg { stroke: var(--ink); opacity: 0.55; }
+.press figcaption {
+  position: absolute; left: 16px; bottom: 12px; font-size: 0.78rem; color: var(--muted);
+}
+.layer { mix-blend-mode: multiply; }
+.ink-in .layer { animation: register 1.4s cubic-bezier(.2,.7,.2,1) .35s both; }
+.ink-in .l-c { --dx: -9px; --dy: 6px; }
+.ink-in .l-m { --dx: 8px; --dy: -7px; }
+.ink-in .l-y { --dx: 6px; --dy: 9px; }
+.ink-in .l-k { --dx: -5px; --dy: -6px; }
+@keyframes register { from { transform: translate(var(--dx), var(--dy)); } to { transform: none; } }
+
+/* Sections */
+.sec { padding: 44px 0; border-top: 1px solid var(--line); }
+h2 { font-size: 1.75rem; line-height: 1.1; font-weight: 740; font-stretch: 112%; letter-spacing: -0.015em; }
+.sec-intro { color: var(--muted); margin-top: 8px; max-width: 52ch; }
+
+/* Filters */
+.filters { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; margin: 22px -16px 6px; padding: 2px 16px; }
+.filters::-webkit-scrollbar { display: none; }
+.filt {
+  flex: none; padding: 9px 16px; border-radius: 999px; border: 1px solid var(--line);
+  background: var(--paper); cursor: pointer; font-size: 0.92rem; font-weight: 550;
+}
+.filt[aria-pressed="true"] { background: var(--cyan); border-color: var(--cyan); color: #fff; }
+:root[data-theme="dark"] .filt[aria-pressed="true"] { color: #04121c; }
+
+/* Product rows */
+.products { list-style: none; display: grid; }
+.prod {
+  display: grid; grid-template-columns: 76px 1fr auto; gap: 14px; align-items: center;
+  padding: 14px 0; border-bottom: 1px solid var(--line);
+}
+.prod[hidden] { display: none; }
+.thumb { width: 76px; height: 76px; border-radius: 16px; overflow: hidden; background: var(--film); position: relative; }
+.thumb img { width: 100%; height: 100%; object-fit: cover; }
+.thumb.broken img { display: none; }
+.thumb.broken::after {
+  content: ""; position: absolute; inset: 22px; border-radius: 50%;
+  background: conic-gradient(var(--cyan) 0 25%, var(--magenta) 0 50%, var(--yellow) 0 75%, var(--ink) 0);
+  opacity: 0.25;
+}
+.prod h3 { font-size: 1.04rem; font-weight: 680; line-height: 1.25; }
+.prod p { font-size: 0.88rem; color: var(--muted); margin-top: 2px; }
+.ask {
+  display: inline-flex; align-items: center; gap: 6px; text-decoration: none; font-weight: 650; font-size: 0.9rem;
+  color: var(--wa); padding: 10px 12px; border-radius: 999px; border: 1.5px solid currentColor;
+}
+:root[data-theme="dark"] .ask { color: #3fd47f; }
+
+/* Full range */
+.range-h { font-size: 1.1rem; font-weight: 700; margin-top: 36px; }
+.range { list-style: none; margin-top: 10px; display: grid; gap: 0; }
+.range li { padding: 10px 0 10px 22px; position: relative; border-bottom: 1px dashed var(--line); }
+.range li::before { content: ""; position: absolute; left: 2px; top: 18px; width: 9px; height: 9px; border-radius: 2px; background: var(--d); }
+.range li:nth-child(4n+1) { --d: var(--cyan); }
+.range li:nth-child(4n+2) { --d: var(--magenta); }
+.range li:nth-child(4n+3) { --d: var(--yellow); }
+.range li:nth-child(4n+4) { --d: var(--ink); }
+
+/* Steps */
+.steps { list-style: none; counter-reset: s; margin-top: 24px; display: grid; gap: 22px; }
+.steps li { counter-increment: s; display: grid; grid-template-columns: 48px 1fr; gap: 14px; }
+.steps li::before {
+  content: counter(s); width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center;
+  font-weight: 780; font-stretch: 120%; font-size: 1.2rem; color: #fff; background: var(--sc);
+}
+.steps li:nth-child(1) { --sc: var(--cyan); }
+.steps li:nth-child(2) { --sc: var(--magenta); }
+.steps li:nth-child(3) { --sc: #c99a00; }
+.steps li:nth-child(4) { --sc: var(--ink); }
+:root[data-theme="dark"] .steps li:nth-child(4)::before { color: var(--paper); }
+.steps h3 { font-size: 1.05rem; font-weight: 680; padding-top: 2px; }
+.steps p { color: var(--muted); font-size: 0.95rem; }
+
+/* Promise */
+.promise { display: grid; gap: 18px; margin-top: 22px; }
+.promise p { font-size: 1.12rem; line-height: 1.45; max-width: 40ch; }
+.promise p span { display: block; font-size: 0.92rem; color: var(--muted); margin-top: 2px; }
+
+/* Gallery */
+.gallery { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; margin: 22px -16px 0; padding: 0 16px 8px; scrollbar-width: none; }
+.gallery::-webkit-scrollbar { display: none; }
+.gallery figure { flex: 0 0 74%; scroll-snap-align: start; border-radius: 22px; overflow: hidden; background: var(--film); aspect-ratio: 4 / 5; }
+.gallery img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Contact */
+.contact { margin-top: 22px; display: grid; gap: 0; }
+.crow { display: grid; grid-template-columns: 26px 1fr; gap: 12px; padding: 16px 0; border-bottom: 1px solid var(--line); text-decoration: none; }
+.crow .ico { width: 22px; height: 22px; color: var(--cyan-text); margin-top: 2px; }
+.crow small { display: block; font-size: 0.82rem; color: var(--muted); }
+.crow span { overflow-wrap: anywhere; }
+a.crow:hover span { text-decoration: underline; }
+details { padding: 16px 0; border-bottom: 1px solid var(--line); }
+summary { cursor: pointer; font-weight: 600; }
+dl { display: grid; grid-template-columns: auto 1fr; gap: 6px 18px; margin-top: 12px; font-size: 0.9rem; }
+dt { color: var(--muted); }
+dd { overflow-wrap: anywhere; font-variant-numeric: tabular-nums; }
+
+footer { padding: 28px 0 16px; color: var(--muted); font-size: 0.85rem; }
+
+/* Dock */
+.dock {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; background: var(--paper);
+  border-top: 1px solid var(--line); padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+  display: grid; grid-template-columns: 1fr 1.5fr; gap: 10px;
+}
+.dock .btn { min-height: 50px; padding: 0 12px; }
+
+@media (min-width: 560px) {
+  .strip .where { display: inline; }
+}
+@media (min-width: 820px) {
+  body { padding-bottom: 0; }
+  .dock { display: none; }
+  .head nav { display: flex; }
+  .theme { margin-left: 8px; }
+  .hero { grid-template-columns: 1.1fr 1fr; align-items: center; padding: 64px 0 72px; }
+  .products { grid-template-columns: 1fr 1fr; column-gap: 40px; }
+  .range { grid-template-columns: 1fr 1fr; column-gap: 40px; }
+  .steps { grid-template-columns: repeat(4, 1fr); }
+  .steps li { grid-template-columns: 1fr; }
+  .promise { grid-template-columns: repeat(3, 1fr); }
+  .gallery figure { flex-basis: 31%; }
+  .contact { grid-template-columns: 1fr 1fr; column-gap: 40px; }
+}
+
+/* ---- Centered layout (v3) ---- */
+.strip .wrap { justify-content: center; }
+.strip .where { margin-left: 0; }
+.head .wrap { justify-content: center; position: relative; }
+.logo { width: 44px; height: 44px; border-radius: 50%; padding: 2px; border: 1px solid var(--line); background: #fff; object-fit: cover; }
+.theme { position: absolute; right: 16px; top: 50%; transform: translateY(-50%); margin: 0; }
+.head nav { margin-left: 28px; }
+.hero { text-align: center; justify-items: center; }
+.hero-text { display: flex; flex-direction: column; align-items: center; }
+.hero-logo { width: 112px; height: 112px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 6px var(--film); margin-bottom: 22px; }
+h1 { margin-inline: auto; }
+.lead { margin-inline: auto; }
+.ctas, .facts { justify-content: center; }
+.press { width: 100%; max-width: 560px; }
+.press figcaption { left: 0; right: 0; text-align: center; }
+.sec { text-align: center; }
+.sec-intro { margin-inline: auto; }
+.filt:first-child { margin-left: auto; }
+.filt:last-child { margin-right: auto; }
+.products, .range { max-width: 640px; margin-inline: auto; text-align: left; }
+.range-h { text-align: center; }
+.steps li { grid-template-columns: 1fr; justify-items: center; text-align: center; gap: 10px; }
+.steps p { max-width: 30ch; margin-inline: auto; }
+.promise p { margin-inline: auto; }
+.contact { max-width: 560px; margin-inline: auto; }
+.crow { grid-template-columns: 1fr; justify-items: center; text-align: center; gap: 6px; }
+.crow .ico { margin: 0; }
+details { text-align: center; }
+dl { display: inline-grid; text-align: left; }
+footer { text-align: center; }
+.gallery figure { aspect-ratio: auto; height: 300px; flex: 0 0 auto; }
+.gallery img { width: auto; max-width: 86vw; height: 100%; object-fit: cover; }
+@media (min-width: 820px) {
+  .hero { grid-template-columns: 1fr; padding: 56px 0 64px; }
+  h1 { max-width: 16ch; }
+  .products { max-width: none; }
+  .range { max-width: 900px; }
+  .contact { max-width: 900px; }
+  .gallery { justify-content: center; }
+  .gallery figure { height: 340px; flex-basis: auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .ink-in .layer { animation: none; }
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-call" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.6.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.4.8 3.2.6a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+  <symbol id="i-map" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+</svg>
+
+<div class="strip">
+  <div class="wrap">
+    <a href="tel:+919762476111"><svg class="ico"><use href="#i-call"/></svg>97624 76111</a>
+    <a href="https://wa.me/918390135999?text=Hi%2C%20I%20want%20a%20quote%20for%20packaging." target="_blank" rel="noopener"><svg class="ico"><use href="#i-wa"/></svg>WhatsApp</a>
+    <a href="mailto:skonflexipack@gmail.com"><svg class="ico"><use href="#i-mail"/></svg>Email</a>
+    <span class="where">MIDC Waluj, Chh. Sambhajinagar</span>
+  </div>
+</div>
+<div class="cmyk" aria-hidden="true"><span style="background:#e3262b"></span><span style="background:#f7d417"></span><span style="background:#1ea34a"></span><span style="background:#18a7e0"></span><span style="background:#2e3192"></span><span style="background:#8e2c8f"></span><span style="background:#f58220"></span><span style="background:#e6007e"></span></div>
+
+<header class="head">
+  <div class="wrap">
+    <img class="logo" src="data:image/webp;base64,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" alt="Skon Flexipack logo" width="44" height="44">
+    <div class="name"><b>Skon Flexipack</b><small>and Patidar Chemicals</small></div>
+    <nav aria-label="Sections">
+      <a href="#products">Products</a>
+      <a href="#order">How to order</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="theme" id="theme" type="button" aria-label="Switch to dark mode">
+      <svg class="ico moon"><use href="#i-moon"/></svg>
+      <svg class="ico sun"><use href="#i-sun"/></svg>
+    </button>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <div class="hero-text">
+      <img class="hero-logo" src="data:image/webp;base64,UklGRkYaAABXRUJQVlA4IDoaAABwZgCdASrwAPAAPj0ai0OiIaEXeWUAIAPEsjdwYAHtyxnwq/sOw4yt3H+/fsh+VHzNVx+nffL+3/+H/H9Kgb/1i91Pzn+O/eL+5/M//Rf672Nfo7/Ie4L+l/+S/tX+Z/73+T+ML1YeYv+l/5j9k/dk/5H67e8P+4eoT/Of8d/8+xU9CjzcP+p+4Xw3/tZ+0PuU/3j/w6yv6W7LP9D/beo99F+4PLu6480P5L91P2f9/9r/9Z4E/IjUO/Jf5t/nPzP/sPGYAB/R/7R/qfSnmv5AP5geWN4dtAb9TeiL/3f530hfUX/n/0/wI/zb+4/8DsmoFkN5GFaPdImH05DRpIN+yIyL/QFjhwFAVV3oddphUmXpcSGg2KdQ+mnxBSaxbMJiuHzH/q8Jkm76GDMEgxrrEg3ZLmPl7pSPNvZq2XSG4D3o/9WLjf0Upmpzgw3j1BoZiJJU1KLWYVQilQy2mW8gWOdxZ++H1qADaUi4OTt/Apgam/Sxo5ycNp95pFEJUoU7eCti2jryUPlG5KQ0hnAaleXl4lty1R1VBhqU6FbU/eX2k5WW7vjQ6qIxuxPm8tEeomg9dWSuW97UeIR8LHuUQj3/12MDzN2xFFxJuzBphRgYo/BZRsK1xDOH4QJnQ8mXUV+Od7STgFT9nRK4uj1nWaG59nP1S2TpYNIsPtcFPSW2Ay1yxcr1bNM6hDDTeJauNBbWiwLD6zV2WPK+kJFeOzTktLOOne5vZG5F8lmzG7MsniEcweKFTkqb9j/RFdRgcC5b+WrS64iUjXyDZQdPJwl51Wr7jOANIVnyr9N/wUosFfSI6y98ePlGviDCm5UeV37LwC187Fq+KfxQOqpSl9TrJxTpJGyu95jy455/ac7HGNi9MWSSBWzB4UCXqJCsIuDxyss74y/Kuh9jRVtn/1LKkpAGo5aJ/bNnPHpmQkZ8ydDFo8PoiUAOjktEibne/8Cf/zudPjPSHXx4ep+EYn+6Kc0Rj4+JLNI4e3Jh9vZG8qRjCVBBoYK8x1V+kfGwTattDTWIkXlFXwE6KUOtfPyOs3V1IyZqlm/u/y4H4Iws9XeQXIDVgyaWosZGqk7h7T1oc46ZW1t5A0AA/urSACG0gAAAsxHNfkmECjhLyH7a+hWuvrhR9Yu2AOvth6OorGYVp2XhC386Xelk3xAD+YEo3DFluWaJp8ZPoW/xzMbIoP0bL71NSOV/U+T+e89Y6T0KWlL4yGTJiK0h/GnhHjDarcRiqYne2ilOcMedqxstogUXSaQJY4UxwMr3kk7O/7TL9dp6AQdHE0Rga3eajBL92c+YKPnEEs/CiQGLAAjbXV8iO4g9AAEF8L/Hjfq3fLQQ1v8TttGniaae0mC8117P0RXRuHC3fUxoz7V1MWSMteKCMJtahX2OsA81Je2Dg8Yqaehb7OcKG5Weg7rxKi/lo+qFlwKKeNdHWjcUB1dFeXg73O2S7aN3UcO8hoJxjNXlbOZkncO5CJ/AKhywMET9TlYO+v3ruRRNPXc9f5MzzhSL1stO3Xe52PV26bfLlHXbdgj+xxBcdmAIK/qM+9urZVJcqMEj+Q4SATL+UNW64h5BHKCh6Sze1BrU0XIkyyevgyyBGBzxYYV0ala9gTE54v2FVsg/Af+2sQ6dPJ7z+kiP3Myx4UlvxMIum5HfsVuhD/DivmU+lor3rP3KOgqgq/W59uNFZNa+4KDbodVl/NQPaxaIwqY+PkRAnzeqhvNXB0/ZH0oT7ffblEBDbPOcL/RP1OBEfYdiN9wxu08/1DISpx5Wrog8cQx9I0cb+IGD/yDQI7gxSDvCpLXKxeK9Kzx0jR/6LX7rqdfOop++7xUrCWtmGBfs1wDB/sAxPM01YmCob6fhPbogBWmIHE/LmHq5jIsMA3QS7ZjfC9vH/yEgLRhYpKl9Fi03ltIngCDqa+Ip7Sg5KAk1qUSAqMcxaHDlV2CKWbz2WBHtL3dfaZrhz5IPrvnGO09jsCOFnwJo1+z4So5Tje+DrpXstQ9sBzKrSY8bKfXI/zJC+B5DSGd/Ne94tcrX2jrBSASnq7caqHKydO3K+y/PnJf6UguzCHM9kOGdSKlFTyl+MeJnTQ3tKBSsf+UcR9K+5X8M2Fvhs872qjLBRUiKKTXXxMZyKlIpeGuuZ93YVWLbqi8QvI+K0Wbz0sl2L8aEjpzS//sXuO4OuwlhIHBgtKv3nKsa6dTQYyeZkY6pEg+vQAH59YAwfFwbTmcd2Oo85g4BZjuM90W73OYKk7M1/aJYz/pI9Qy4Bvz2CdHavmXcs4jY4D+J4485iKLmWz7t6sYk/dvfmZa72z/7jIeO7wGpUpTU+lmqPwB6gFEf6xSDJvGzF6g2AhDNEez/KbETbejybuh5PuKkmP1XWqtvmiCg/Peza/gCPFdXVpES/0E8n6i/5sgNvUeRMoLVEW+p9WgretL4BRZXXak9JwFgc8HZLAnqweATgPqxzBm/5o09BfD8Cg0NcUYPC+ea8GS+yJ1abL/VjXobSDeNBbmb1chxI7Ou1n+P/a7xo38lg7WU9Yg5TwAjKewZ814Cey9x9mcn/qhrmdYOUEAYiMCaoFx1FvvFL3RqLuFAcx3GFaFXZ7bNz+acqgFboCccvESHI9ZJl/uOtriN/l7ddmk6yrX5AgJanHiMJScEqpaDXgO4Ixexnit/cy/Vx/5Xqli9IiOiiDM2YhkNVd3h1T4UHAfMUCUlrIeBgWN9h43TwNkoV6++WYsJffpxmK17YSIqtedWUcHnDy67f38l/n/6Ltz4mmrP7cezAIR3UmjZK9blji+bmQT7zFAuYKY9zd1/Ak5yaT1c7oxwAM8yYub2LFUcr/d84uzeZCF5fz3+tgvBVVy3pgAhJkdCyDELGXUcXrOpDkYsyTifdE8Sig6CejEBSIq+RjytqaRKxAAbdUAxwQW8suL9CSLrQ2GTr2gsYfnEccdahvuPQIA7ETbbky9KOOZTE5WUlBzLJtLjabC/WNKFPdD876QoaX1LzCqZJPPzby6zIzkmbZzs75w1a83CPhNGSu3Gd7kaye4IbbXmQBQj1hvwbCw7QeOKy57R8wi/S3ZNWlr59CXpd+7Ld2iePDBOZISbu7mpDIlrdWatma/8plh2UCO0UnQzO9thVHYwIVeNeSj7fEl21PA41Hp6gniLXtQD8ea335ZSvBhsI00xLr7cAH+8DII6fD4oz9pIgQ6eIWjwRoFuKPQQ1WsisJ6elNqOTPlTi46IpM43Kj7hNCaefyt/UAEI+Qs3/hZ7iTkf4OQGFmvuqkzIcSlv+Aw+UnRegrka9uxs5QxeEaR5u8Qf+/9Zt+axWVvudREl9hsRjP59Q8wodtA3GuKKMg8nOksRYv4wCp6tJqBIL3mvcJSXiacDHQL7u/EnECs4l4IpuNYqGzoHdaHTirvFvLAy6ai3o+5sVqW0TeqyFqsDr9PqdvrVLuy6Wh4mQKv40vNz1Oq6vEb4BUJ5sWSWuwxlbYBdvsqDJErnrv61phUFqCHwz4SaNnLmTY0ANjPzCoiP7+SYKDi3UPUZ0ByMT04u+/kQjdyGYShOGVfrbwu9P2TtS/lrnZBMe1sLlq4lsvQn809gX0V4mnqT9mXWjtqMheuWcqQTYRVz1URbrOG369RaDIlejpBlE+zQ/wHy6tUOnFcFL0FrXTbV74lyV1ZBcHrU/s+TH/LtnFraCtn59e/+GfTNC/DFyJBtGEJ86iuxxGNIMbkyvEEnlP4XTTzQMGzkY/eR/fDoa21q1G5tUs5jTdrCzhy5SsB8x9HUKziS3GUxVUvuyRmyhUDCBQZwr9X+AByMWnkd2LfBsGWL58Z0MS712sda/Jf9XZcYeL/RIBryryyP+DRHIqd9vDFzMOgwztW0euJI6MT8iIShPNH5w288xB+DM3LSOAOLz0qic1V5myx3ECe4Js0e+UtbUn0pahRmExr5cxj8Z5YhsvcowxNfHpiqboyTEevOQqp3ueeiZgr1/AMCTUMs/Px/SGrKPh7cnxvmpgqjTkMc+1mHenjvFRzWoxJ92PTseJ/dQhsg4RagP8Mtjyb4WwSaRyqUjlALKcFjxq7Y0NmcwPMewaHAXUZU0H+jrqatwGyfjI4/+RFy8m+TSMC/ZSoY8gjZAslXKXaGMNOIPXiPpH7OhLZMqururzEAyO4gUkYnwB8cCYHD2+6mTmu5Fd/tvPxfuoJPRZ7+HUuoaV27SVmGNU6KqKBMMpONdG9vbm97EvFMOj70HpjiS8UgxEt2QAhU8H3Y+2DYGMfP3MQ/UffeTLM2rjlihdZv45JgRgIYqmbw8oawcPJj/7NYcc8HosCr9aXa1a5WKXx6Abdb1uTbZXS0xGesv+TmXQh4RXvTv0hOYhzim4YUkNIHmpGFsga/vDhwXSBnzZ5bq7jGdwIkoDIryx5QLeTEjgZrID8iuv/hL/Ljb8SBcjCWmsBnnX3HW5IMz9l4sAzcRWKKcX3Ec9fWppZFKuGz9TbhbhetpA7mGvDzGowZk1hYdbTrmfyIAu58kLhUlznGHY/ComkovKYTyYQu00DYj99u4aweWvPk4yUDhEyWh7dkZ33dq/PdZ9R2z91b7N02y+1lOmT63gIO4xnArUJG+rCcc5xmFVEgn5slE8aFxGz7JeyDMM7k8Ljhm5d9BLWSscBYHMa/0DAX5qUDbb4Bq4VsUoibsJfpSeLOM7Oz+bhSyP4fi5g5fjUOYSB41LpwKbPTQQf71h4FpmIp56rnO5SMrx0gH0rrb5lkSkXfwSX5oyIpdxpGv5uGY0L5hQdae2c+YlxOBXkRYhB0Kr0ylSyGypo+GjNj1rX1MVUREqFndCx4YFk1EFdc93oXz4hFnJ9PFrwRQUYeLidAY9Vhcavl13rlpLcUG45NJcAlmf+wgMNDf45+oNliveGWckGTfgy4Zfl+/6SpmoJO5R/0J4LS5WXypgBSA0LCz2J7rTkJrn+LMnxU5izpS3edLaKB4aUxFoy17uoF2yN+OJjMqsjhbuRB7icHARZGMN16+/jwMMig6G9ruGJpt3R7xsgKWMR0bnjJD6SUWYwU39WxHcCcVqDssr98H/Ihw3Wc16eI/TKySEfaKMB/3T+d+0CAnGOj522SBQ9DO/piAWgzifYaoCTI2HY5kVucgldC8/RXFuzmSzbQLmuQRckx/QU0uagNXKXFkLJbq3gM5VwbP9E0Ziw/hZm0Q1T6CvRJ/9Gnvcc0tVWdi6jcpYdDtb03xN7kD6kw75jsq1qKdTLRftNte0yisFdmsJYDaLsTlvV/rI3BUhb7kfM+5M/h4kDY1FzkfnG5pyte0/UKUg1GQk5P/CTt2PAk9KOdp8q9RYUOXQdpRnt5DZM/8j86IcskLLEWHSfukjdf1TOhoPsY8j6sY8ykDjhYWhNqmQPPq9z6/LDWtiKNBU966isz9S3ozP/J/McC2iblO0WJJacYajR1m9X6MECe3H22WpxgwmqM3rD/nVyrCoo+o4rHj4MzQ2crO7Dtvk1Gf0qwyYkmxkXGBS8Xl4RxfVOGrf80b77nZO9SAH/N85B/UxTBezE5ZJCY+99SIJDjRwfnu9vwI6cLeAj6cg1N19SMYAYRyHdb56xuub5OdmKGJOrjwrv7+tsVDtoegmcb41J3ZO5DF84kZi6FpRN3hPLVyA++lGHqDt1+cw3Th84ab+vncfkxOCiMVl2HHJpBr/7UMnJviVew0Zz2PvUb23mhju+d12c3aWwBLczzf+HaVM0FQo9yigAXgBcB6U9GwqOl+p/SPmYGQzlf1oCiYXU8Xt4pfRxv6m38Pbgp1PvxgMflwiGyCffFWOexI7B34KQZzDjP/o8HOAf/O/uZxCTELRazC39NR06+JrBlV6AT5DTCCKXTSZ11S9+/TAg1A8vjuA9y22ZQvevc5EWqqA73rhNDhHEzs5HiLH80cbIIIR96kdqsg7HfM1As7BlDFHpUuaa5DMGuTkYyj9Ir08P0+CYZEePWdh9e0nx+ZVllIQIp1BNCAgF3a2PTVDPP6A5oGulqSNHskKTr4QfFv4O0+0jWBSPKwU2F8zHUx4DKVGHXwT/3gCpL9PGAZP4FW/wiPUwo9tDLI6A4qG3OLAUreRmU9aTBGnDlEBg1TgCzE1ZIY9DNxPZLLBtk0hhbl6MAQutSH+ij01JjzIeO7y1Y6rabsjFCh1MWwANbEW2ep8NvwwL6eZ4ZHFMj8uT/1XDE+APEzWgQuytc6WwYDgYtWRb+G8wLj2hNGpkhfy/fAjZZe8W5jrXW9cZefdWs9eMki9PbHh2XGlra8+KG7KMSq+/HszT4tOjiHzX9+H0VhIdNqKlAJMA9+07iJu207XmFJSQ3pWht1R/HxuEsTTHAT1TX+7ZsTG1cCobRSDg0Or+RYb5HINkZfaxqwwT4z99tF/UO2it0KoNEytBLXkINN+aiXeLKShLopwoH1ryA4CGGPRVNX5eadEHE6YUA6S5FuyDV9uO0ZEq9BK9XSyIbbvAbdDvmAQEf8xgspZrLJGhi8+zGI/EwZ72jtvRTMdMpxQSYlFqpJwVGnG3iZ8E2pkTWgJm+pKEnepJL5hNTjkByoYo+ibtaBJM47R6K2ruuHEz1DhRlLIV7l34LVy8I3H3gLOyxLlMsmcGLTjTnrwH50nyXuMTHEXlj+ZLtPAK4PjKuTCSFbNM+4oldV6PtyaNYG4UvP6cM76l9Rdk+amJIJ1/jmt+ZXBMFjUBg3wcQ4+k2YUmnbxTI4LxfRl2fX0TaX8tvg0MXn5g9ch81mzW5UmH8uU3r9MHTWE0B0CG+bx40WxkEw0B8Nmj4/UzIbz0vvCNiZB+TJx/zRda051MZg2ezjH8b7XfhXfuqqXimXQmSyT/O6k5RvPhU+30/Z4f8f0K26IgayAIACtNgO1UpG6lzWG8fW6miLNcwJ9XaPy2ybB+nqhanK92w8pQF1XaN/Js3AoMXkAo/TQG/4PYX2y3jrgkY8s+9SospNmvyNnWDGeSgF1L/9GxGrwnhpiMJBrfFyXNnuWSjJxSuB9SlZZtT7Y6vUauayj8E+DHSNZ5PYWHwtZwTxr71yojX0USbyAl/qGdX27COmfvlvff26+SXte+21CI8bh+1+z3NEUXvkF6UZuJedqpE4DttpB2FUbJvq9M7kzGvkCNbNegDnP0AbAFCa0zlVNIiJf4U0m/rH3evnhjHNQIj/45lKHDy/FLqf9Rb8MV0UJVoK4Qzz0AywbRdwlRnW+2aKIg0ZcaoUxyxm+7JrAOuJpPi80k5R9mQLWuFq0M9Am51ivqRtaf/pUOmt60QHN3cvC+foXFKWdz02MlOoeqssHTQDzpRXrNNbH4Vyrh7q5mFY4aaLn5ftp7Nl22+CJlVh1F96+M8seUmqQtVwScKznSXMayQEgPvJWNgonXknQOCkcw1B4LOPZ9QVKbkcBAzYDggAAZoKcbST/CN9Keit2qWyh2Xf8WtLaB3wfMcVQgf07tieJph+kY/dJan2GyWqLDo3HgGzo5Ykld1M7xdjSD/B+kzjGYa7+faf4L3xFMwEjTNxYmmL6uqn6oe9ehkBdoVhqs2K6rLyksqrH8rfFvlEguK/Cw9IPng6fXCX5dL3aYA+1ZhkbEWm+ZPNYVGQ7bY65qRZXI+dUCd8Yaglri5uoYO+foBL4jVoPR2+12bpr7pwP3yOOjO82tQHIPhrZgFeFu9ZP5IerTNeW0HJAgq48op27J/fJnUiFHg93ZO9/KeQID1hf/UO7JEB4maQ5xm5200qYKMCUC1F9jJCQaY/KwBmya/ZSUxnB7ktoFLAK7myIXb6Xsh2gvXU8cKnmlilox0j+Y3AkMvuvJbny90KF8iiUuj5Gy9HJCyeS9V91aqRr0NbnLYXlpar5bwHZiYT2mI2EVIblcttpym+oILjAnuXU/2ub3vYahv6eYHAYnryHUuwp/W1cHjX3Ddhof1HVcVXQ4oFG5uRfjs6lHfFESR5/YWjQ8uT3T3OQsqj7SavePMrB6NHHOQLZxilTr5ydaSFfR6cb/Ed6YxsUjC9MAhoXNZR5FLftotv79TQMhUr5sd/8+EPmeFwE9SVok0b+WsXhwUn4vNZX7BRTto7IzB2Hu2PnGWK95o/+D164XV6iab+TWcKMT/QRyLrBPsxmWdaKB5EJp8snQ0V/8y9TPJ/l5H4SmBBJBkhD9vP33eR7SBBmXZ8LqchzTcDLPCJXXRQolp138vbqMbTh7HUY1iQMBubNoZADbaVLtymstdXChM2Fsy/nI2Sp7OsLp+UpsyH9MdAdSQ+Obd6Yg+MnaGCpgOYHle2FvRZTI9Ph1it5LnRzt0l53pR0+QxixIO4zkEB3KR8TNcC3uSoQgf39GSssYNUBKUUt87ywMtmfgEoUxBqLNUB4Gc3iyvUAveuP71R20f9NOXQvKSy/cvuPaJ89wD/1izWDSNU3jiSusOmcKAcF5GtiHIH240orIlClAjUYFCADPFbLEPsRbv3PzMDXsCSHPw7rN7Pp2uBhFEagnOfUzm//YgjgZksmFTHjA7aUZCCLFYJ5wEoALG0QC3DY/nvhrmg440GLIeOP7kg1gVxAUuUKrwIvbYbEgMnSc660aJYkEVLISgcX63xwwTAQ1bh2w3nH+Etz/iGze/FN9j1wyVl/plJGQrLw3/OWz1XxT1LwFt62LKcziE6UheHVK5EeDNtb3jMznjb2W9HK7ai/Npi04O82ApezI/QJOf0nFdJy/9gNZds8ehSUD6o2bvzLY+mYXOkqAK+jKSAuG3oCAhanWwVvD9V22xU1eVdLWLCMDek3aBI4Wc/nEL3IenW88V03Ea50r3B2tVfF2DT6JI5yBf5g6iunOwhxgzNTgDVqNLXQgeKbvly640YzvOd9B8Nma0/A6Gx9pgEtzRQH66VZkmrOV/uUhRmNcAsTfbnH9R/bl/DwBSa+Zf/4unE80atpT1M/i1msQdMNYKWTTrAiWJzAAAAA=" alt="" width="112" height="112">
+      <h1>Milk pouches and packing film, printed in your colours.</h1>
+      <p class="lead">Plain and printed pouches, film rolls and lamination for dairies, bakeries and food brands. Made at our factory in MIDC Waluj, Chh. Sambhajinagar.</p>
+      <div class="ctas">
+        <a class="btn wa" href="https://wa.me/918390135999?text=Hi%2C%20I%20want%20a%20quote%20for%20packaging." target="_blank" rel="noopener"><svg class="ico"><use href="#i-wa"/></svg>Get a quote on WhatsApp</a>
+        <a class="btn line" href="tel:+919762476111"><svg class="ico"><use href="#i-call"/></svg>Call us</a>
+      </div>
+      <ul class="facts">
+        <li>Since 2013</li>
+        <li>Plain or printed</li>
+        <li>Made to your size and design</li>
+      </ul>
+    </div>
+
+    <figure class="press" id="press" aria-label="Illustration of a printed milk pouch with print registration marks">
+      <svg viewBox="0 0 320 260" role="img" aria-hidden="true">
+        <defs>
+          <clipPath id="pc"><path d="M118 40 Q112 130 118 220 L202 220 Q208 130 202 40 Z"/></clipPath>
+        </defs>
+        <!-- registration marks -->
+        <g class="reg" fill="none" stroke-width="1.2">
+          <g transform="translate(36 34)"><circle r="9"/><path d="M-15 0h30M0-15v30"/></g>
+          <g transform="translate(284 34)"><circle r="9"/><path d="M-15 0h30M0-15v30"/></g>
+          <g transform="translate(36 226)"><circle r="9"/><path d="M-15 0h30M0-15v30"/></g>
+          <g transform="translate(284 226)"><circle r="9"/><path d="M-15 0h30M0-15v30"/></g>
+        </g>
+        <!-- colour bar -->
+        <g>
+          <rect x="262" y="78" width="16" height="16" fill="var(--cyan)"/>
+          <rect x="262" y="98" width="16" height="16" fill="var(--magenta)"/>
+          <rect x="262" y="118" width="16" height="16" fill="var(--yellow)"/>
+          <rect x="262" y="138" width="16" height="16" fill="#15203b"/>
+          <rect x="262" y="158" width="16" height="16" fill="#15203b" opacity="0.5"/>
+          <rect x="262" y="178" width="16" height="16" fill="#15203b" opacity="0.2"/>
+        </g>
+        <!-- pouch body -->
+        <path d="M118 40 Q112 130 118 220 L202 220 Q208 130 202 40 Z" fill="#ffffff" stroke="#c5ceda" stroke-width="1.2"/>
+        <!-- printed ink layers -->
+        <g clip-path="url(#pc)">
+          <g class="layer l-y"><circle cx="182" cy="78" r="20" fill="#ffc700"/></g>
+          <g class="layer l-c"><path d="M100 150 C130 132 150 168 180 150 S220 140 230 146 V240 H100 Z" fill="#0098d8"/></g>
+          <g class="layer l-m"><path transform="translate(0 -24)" d="M100 168 C130 152 150 186 180 170 S220 160 230 166 V178 C215 172 200 182 180 190 C150 202 130 170 100 184 Z" fill="#e2007a"/></g>
+          <g class="layer l-k">
+            <text x="160" y="124" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="800" font-size="30" style="font-stretch:125%" fill="#15203b">MILK</text>
+            <text x="160" y="140" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="600" font-size="10" fill="#15203b">Toned 500 ml</text>
+          </g>
+        </g>
+        <!-- crimped seals -->
+        <path d="M112 46 V34 l4 -4 l4 4 l4 -4 l4 4 l4 -4 l4 4 l4 -4 l4 4 l4 -4 l4 4 l4 -4 l4 4 l4 -4 l4 4 l4 -4 l4 4 l4 -4 l4 4 l4 -4 l4 4 l4 -4 l4 4 l4 -4 l4 4 V46 Z" fill="#eef2f6" stroke="#c5ceda" stroke-width="1.2" stroke-linejoin="round"/>
+        <path d="M112 214 V226 l4 4 l4 -4 l4 4 l4 -4 l4 4 l4 -4 l4 4 l4 -4 l4 4 l4 -4 l4 4 l4 -4 l4 4 l4 -4 l4 4 l4 -4 l4 4 l4 -4 l4 4 l4 -4 l4 4 l4 -4 l4 4 l4 -4 V214 Z" fill="#eef2f6" stroke="#c5ceda" stroke-width="1.2" stroke-linejoin="round"/>
+      </svg>
+      <figcaption>Printed to your artwork</figcaption>
+    </figure>
+  </section>
+
+  <section class="sec" id="products">
+    <h2>What we make</h2>
+    <p class="sec-intro">Tap Ask on any product to send us a WhatsApp message about it.</p>
+
+    <div class="filters" role="group" aria-label="Filter products">
+      <button class="filt" type="button" data-f="all" aria-pressed="true">All</button>
+      <button class="filt" type="button" data-f="dairy" aria-pressed="false">Dairy</button>
+      <button class="filt" type="button" data-f="frozen" aria-pressed="false">Ice cream</button>
+      <button class="filt" type="button" data-f="bakery" aria-pressed="false">Bakery</button>
+      <button class="filt" type="button" data-f="oil" aria-pressed="false">Oil</button>
+    </div>
+
+    <ul class="products" id="products-list"></ul>
+
+    <h3 class="range-h">Everything we supply</h3>
+    <ul class="range">
+      <li>Milk, curd, lassi, taak and ghee pouches and film rolls, plain and printed</li>
+      <li>Edible oil films</li>
+      <li>Lamination or PP rolls and pouches for rusk, toast, khari, bun pav and other bakery items</li>
+      <li>Multilayer plain, transparent and printed pouches for khawa, paneer, cream, loni, ghee, shrikhand and amrakhand</li>
+      <li>Multilayer pouches for ice cream candy and kulfi</li>
+      <li>Pouches for atta, rava, maida, bati atta and brooms</li>
+      <li>LD, HM and PP liners and carry bags, plain and printed, for medical waste, garbage, gardening and industrial use</li>
+      <li>Printing cylinders made to your design, and industrial chemicals through Patidar Chemicals</li>
+    </ul>
+  </section>
+
+  <section class="sec" id="order">
+    <h2>How to order</h2>
+    <ol class="steps">
+      <li><div><h3>Message us</h3><p>Tell us the product, pouch size and quantity on WhatsApp or a call.</p></div></li>
+      <li><div><h3>Share your design</h3><p>Send your brand artwork for printed packing, or ask for plain.</p></div></li>
+      <li><div><h3>Get your quote</h3><p>We confirm material, size, price and delivery time.</p></div></li>
+      <li><div><h3>Receive your order</h3><p>Rolls or pouches are made at our Waluj factory and sent to you.</p></div></li>
+    </ol>
+  </section>
+
+  <section class="sec">
+    <h2>Why dairies and bakeries choose us</h2>
+    <div class="promise">
+      <p>We listen first.<span>Your packing machine, product and budget decide the material, not the other way round.</span></p>
+      <p>Clear, fair dealing.<span>Transparent pricing and ethical business since 2013.</span></p>
+      <p>We stay in touch.<span>Talk directly to our team before, during and after every order.</span></p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>From our factory</h2>
+    <div class="gallery">
+      <figure><img src="images/skon-gallery-1.webp" alt="Packaging made at Skon Flexipack"></figure>
+      <figure><img src="images/skon-gallery-2.webp" alt="Packaging made at Skon Flexipack"></figure>
+      <figure><img src="images/skon-gallery-3.webp" alt="Packaging made at Skon Flexipack"></figure>
+      <figure><img src="images/skon-gallery-4.webp" alt="Packaging made at Skon Flexipack"></figure>
+    </div>
+  </section>
+
+  <section class="sec" id="contact">
+    <h2>Contact</h2>
+    <p class="sec-intro">Mr. Ashish Pramod Patidar, Managing Director</p>
+    <div class="contact">
+      <a class="crow" href="tel:+919762476111"><svg class="ico"><use href="#i-call"/></svg><span><small>Phone</small>+91 97624 76111</span></a>
+      <a class="crow" href="tel:+919561502888"><svg class="ico"><use href="#i-call"/></svg><span><small>Phone</small>+91 95615 02888</span></a>
+      <a class="crow" href="https://wa.me/918390135999" target="_blank" rel="noopener"><svg class="ico"><use href="#i-wa"/></svg><span><small>WhatsApp</small>+91 83901 35999</span></a>
+      <a class="crow" href="mailto:skonflexipack@gmail.com"><svg class="ico"><use href="#i-mail"/></svg><span><small>Email</small>skonflexipack@gmail.com</span></a>
+      <a class="crow" href="https://maps.app.goo.gl/5sp3PX61pRtbHCm76" target="_blank" rel="noopener"><svg class="ico"><use href="#i-map"/></svg><span><small>Factory (open in Maps)</small>Gut No. 12, Plot 30 to 37, M Sector, MIDC Waluj, behind Mahavitran Substation, opp. Verroc Plant 8, Jogeshwari, Chh. Sambhajinagar 431136</span></a>
+      <details>
+        <summary>Company details</summary>
+        <dl>
+          <dt>Established</dt><dd>2013</dd>
+          <dt>CIN</dt><dd>U25190MH2013PTC244952</dd>
+          <dt>GSTIN</dt><dd>27AATCS2900D1ZE</dd>
+          <dt>GSTIN</dt><dd>27AMFPP1668Q1Z9</dd>
+        </dl>
+      </details>
+    </div>
+  </section>
+
+  <footer>© <span id="yr">2026</span> Skon Flexipack Pvt. Ltd. and Patidar Chemicals</footer>
+</main>
+
+<div class="dock">
+  <a class="btn line" href="tel:+919762476111"><svg class="ico"><use href="#i-call"/></svg>Call</a>
+  <a class="btn wa" href="https://wa.me/918390135999?text=Hi%2C%20I%20want%20a%20quote%20for%20packaging." target="_blank" rel="noopener"><svg class="ico"><use href="#i-wa"/></svg>Get a quote</a>
+</div>
+
+<script>
+(function () {
+  var IMG = "images/skon-";
+  var products = [
+    { n: "Milk pouches", d: "Pouches and film rolls, plain or printed", f: "dairy", img: "milk-pouches.webp" },
+    { n: "Milk film rolls", d: "Rolls for automatic pouch packing machines", f: "dairy", img: "milk-film.webp" },
+    { n: "Paneer", d: "Multilayer lamination pouches", f: "dairy", img: "paneer.webp" },
+    { n: "Lassi", d: "Pouches and film rolls, plain or printed", f: "dairy", img: "lassi.webp" },
+    { n: "Taak", d: "Pouches and film rolls, plain or printed", f: "dairy", img: "taak.webp" },
+    { n: "Dahi", d: "Pouches and film rolls, plain or printed", f: "dairy", img: "dahi.webp" },
+    { n: "Chocobar", d: "Multilayer ice cream pouches", f: "frozen", img: "chocobar.webp" },
+    { n: "Kulfi", d: "Multilayer ice cream pouches", f: "frozen", img: "kulfi.webp" },
+    { n: "Milk toast", d: "Lamination or PP rolls and pouches", f: "bakery", img: "milk-toast.webp" },
+    { n: "Edible oil", d: "Oil packing film", f: "oil", img: "edible-oil.webp" }
+  ];
+  var list = document.getElementById("products-list");
+  list.innerHTML = products.map(function (p) {
+    var msg = encodeURIComponent("Hi, I want a quote for " + p.n.toLowerCase() + " packaging.");
+    return '<li class="prod" data-f="' + p.f + '">' +
+      '<div class="thumb"><img loading="lazy" src="' + IMG + p.img + '" alt="' + p.n + ' packaging" onerror="this.parentNode.classList.add(\'broken\')"></div>' +
+      '<div><h3>' + p.n + '</h3><p>' + p.d + '</p></div>' +
+      '<a class="ask" href="https://wa.me/918390135999?text=' + msg + '" target="_blank" rel="noopener" aria-label="Ask about ' + p.n + ' on WhatsApp"><svg class="ico"><use href="#i-wa"/></svg>Ask</a>' +
+    '</li>';
+  }).join("");
+
+  var filts = document.querySelectorAll(".filt");
+  filts.forEach(function (b) {
+    b.addEventListener("click", function () {
+      var f = b.getAttribute("data-f");
+      filts.forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+      list.querySelectorAll(".prod").forEach(function (li) { li.hidden = !(f === "all" || li.getAttribute("data-f") === f); });
+    });
+  });
+
+  var root = document.documentElement, tb = document.getElementById("theme"), meta = document.querySelector('meta[name="theme-color"]');
+  function sync() {
+    var dark = root.getAttribute("data-theme") === "dark";
+    tb.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+    meta.setAttribute("content", dark ? "#0e1528" : "#ffffff");
+  }
+  tb.addEventListener("click", function () {
+    var dark = root.getAttribute("data-theme") === "dark";
+    if (dark) root.removeAttribute("data-theme"); else root.setAttribute("data-theme", "dark");
+    try { localStorage.setItem("skon-theme", dark ? "light" : "dark"); } catch (e) {}
+    sync();
+  });
+  sync();
+
+  document.getElementById("press").classList.add("ink-in");
+  document.getElementById("yr").textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
