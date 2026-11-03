@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#ffffff">
@@ -17,15 +19,31 @@
 <meta property="og:image:height" content="180">
 <meta property="og:image:alt" content="Skon Flexipack logo">
 <meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://falakpat3l.github.io/skon-flexipack/">
 <link rel="icon" type="image/webp" href="images/skon-logo.webp">
 <link rel="apple-touch-icon" href="images/skon-logo-180.png">
-<script>
-  (function () {
-    var d = document.documentElement, t = null;
-    d.classList.add("js");
-    try { t = localStorage.getItem("skon-theme"); } catch (e) {}
-    if (t === "dark" || (!t && window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches)) d.setAttribute("data-theme", "dark");
-  })();
+<link rel="preload" as="image" href="images/skon-logo.webp" fetchpriority="high">
+<script src="site.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Skon Flexipack Pvt. Ltd.",
+  "alternateName": "Skon Flexipack",
+  "url": "https://falakpat3l.github.io/skon-flexipack/",
+  "logo": "https://falakpat3l.github.io/skon-flexipack/images/skon-logo-180.png",
+  "description": "Plain and printed milk pouches, packing film rolls and lamination for dairies, bakeries and food brands.",
+  "foundingDate": "2013",
+  "email": "skonflexipack@gmail.com",
+  "telephone": ["+919762476111", "+919561502888"],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Gut No. 12, Plot 30 to 37, M Sector, MIDC Waluj, behind Mahavitran Substation, opp. Verroc Plant 8, Jogeshwari",
+    "addressLocality": "Chh. Sambhajinagar",
+    "postalCode": "431136",
+    "addressCountry": "IN"
+  }
+}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -83,7 +101,11 @@
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { -webkit-text-size-adjust: 100%; overflow-x: clip; scroll-behavior: smooth; }
+html {
+  -webkit-text-size-adjust: 100%; overflow-x: clip; scroll-behavior: smooth;
+  /* keeps anchors and keyboard focus clear of the sticky header and the bottom dock */
+  scroll-padding: calc(var(--head-h) + 12px) 0 calc(84px + env(safe-area-inset-bottom));
+}
 body {
   background: var(--paper);
   color: var(--ink);
@@ -97,7 +119,6 @@ img { display: block; max-width: 100%; }
 a { color: inherit; }
 button { font: inherit; color: inherit; }
 :focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 6px; }
-[id] { scroll-margin-top: calc(var(--head-h) + 12px); }
 .wrap { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 16px; }
 .ico { width: 18px; height: 18px; flex: none; }
 .sr-only {
@@ -348,8 +369,8 @@ dd { overflow-wrap: anywhere; font-variant-numeric: tabular-nums; }
 }
 .dock .btn { min-height: 50px; padding: 0 12px; }
 
-/* Scroll reveal (only with JS and when motion is allowed) */
-@media (prefers-reduced-motion: no-preference) {
+/* Scroll reveal (only on screen, with JS and when motion is allowed; printing shows everything) */
+@media screen and (prefers-reduced-motion: no-preference) {
   html.js .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
   html.js .reveal.in { opacity: 1; transform: none; }
 }
@@ -380,6 +401,7 @@ dd { overflow-wrap: anywhere; font-variant-numeric: tabular-nums; }
 }
 @media (min-width: 820px) {
   :root { --head-h: 72px; }
+  html { scroll-padding-bottom: 0; }
   body { padding-bottom: 0; }
   .dock { display: none; }
   .menu-btn { display: none; }
@@ -433,7 +455,7 @@ dd { overflow-wrap: anywhere; font-variant-numeric: tabular-nums; }
 <div class="strip" id="top">
   <div class="wrap">
     <a href="tel:+919762476111"><svg class="ico" aria-hidden="true"><use href="#i-call"/></svg>97624 76111</a>
-    <a href="https://wa.me/918390135999?text=Hi%2C%20I%20want%20a%20quote%20for%20packaging." target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
+    <a href="https://wa.me/918390135999?text=Hi%2C%20I%20want%20a%20quote%20for%20packaging." target="_blank" rel="noopener noreferrer"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
     <a href="mailto:skonflexipack@gmail.com"><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg>Email</a>
     <span class="where">MIDC Waluj, Chh. Sambhajinagar</span>
   </div>
@@ -471,7 +493,7 @@ dd { overflow-wrap: anywhere; font-variant-numeric: tabular-nums; }
         <h1>Milk pouches and packing film, printed in your colours.</h1>
         <p class="lead">Plain and printed pouches, film rolls and lamination for dairies, bakeries and food brands. Made at our factory in MIDC Waluj, Chh. Sambhajinagar.</p>
         <div class="ctas">
-          <a class="btn wa" href="https://wa.me/918390135999?text=Hi%2C%20I%20want%20a%20quote%20for%20packaging." target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Get a quote on WhatsApp</a>
+          <a class="btn wa" href="https://wa.me/918390135999?text=Hi%2C%20I%20want%20a%20quote%20for%20packaging." target="_blank" rel="noopener noreferrer"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Get a quote on WhatsApp</a>
           <a class="btn line" href="tel:+919762476111"><svg class="ico" aria-hidden="true"><use href="#i-call"/></svg>Call us</a>
         </div>
         <ul class="facts">
@@ -539,54 +561,54 @@ dd { overflow-wrap: anywhere; font-variant-numeric: tabular-nums; }
 
       <ul class="products" id="products-list">
         <li class="card" data-f="dairy">
-          <div class="pic"><img src="images/skon-milk-pouches.webp" alt="Milk pouches packaging sample" width="328" height="480" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('broken')"></div>
+          <div class="pic"><img src="images/skon-milk-pouches.webp" srcset="images/skon-milk-pouches-sm.webp 164w, images/skon-milk-pouches.webp 328w" sizes="(min-width: 1080px) 177px, (min-width: 820px) calc(20vw - 39px), (min-width: 560px) calc(33.3vw - 41px), calc(50vw - 42px)" alt="Milk pouches packaging sample" width="328" height="480" loading="lazy" decoding="async"></div>
           <div class="body"><h3>Milk pouches</h3><p>Pouches and film rolls, plain or printed</p></div>
-          <a class="ask" href="https://wa.me/918390135999?text=Hi%2C%20I%20want%20a%20quote%20for%20milk%20pouches%20packaging." target="_blank" rel="noopener" aria-label="Ask about Milk pouches on WhatsApp"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Ask</a>
+          <a class="ask" href="https://wa.me/918390135999?text=Hi%2C%20I%20want%20a%20quote%20for%20milk%20pouches%20packaging." target="_blank" rel="noopener noreferrer" aria-label="Ask about Milk pouches on WhatsApp"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Ask</a>
         </li>
         <li class="card" data-f="dairy">
-          <div class="pic"><img src="images/skon-milk-film.webp" alt="Milk film rolls packaging sample" width="480" height="445" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('broken')"></div>
+          <div class="pic"><img src="images/skon-milk-film.webp" srcset="images/skon-milk-film-sm.webp 240w, images/skon-milk-film.webp 480w" sizes="(min-width: 1080px) 177px, (min-width: 820px) calc(20vw - 39px), (min-width: 560px) calc(33.3vw - 41px), calc(50vw - 42px)" alt="Milk film rolls packaging sample" width="480" height="445" loading="lazy" decoding="async"></div>
           <div class="body"><h3>Milk film rolls</h3><p>Rolls for automatic pouch packing machines</p></div>
-          <a class="ask" href="https://wa.me/918390135999?text=Hi%2C%20I%20want%20a%20quote%20for%20milk%20film%20rolls%20packaging." target="_blank" rel="noopener" aria-label="Ask about Milk film rolls on WhatsApp"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Ask</a>
+          <a class="ask" href="https://wa.me/918390135999?text=Hi%2C%20I%20want%20a%20quote%20for%20milk%20film%20rolls%20packaging." target="_blank" rel="noopener noreferrer" aria-label="Ask about Milk film rolls on WhatsApp"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Ask</a>
         </li>
         <li class="card" data-f="dairy">
-          <div class="pic"><img src="images/skon-paneer.webp" alt="Paneer packaging sample" width="351" height="480" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('broken')"></div>
+          <div class="pic"><img src="images/skon-paneer.webp" srcset="images/skon-paneer-sm.webp 176w, images/skon-paneer.webp 351w" sizes="(min-width: 1080px) 177px, (min-width: 820px) calc(20vw - 39px), (min-width: 560px) calc(33.3vw - 41px), calc(50vw - 42px)" alt="Paneer packaging sample" width="351" height="480" loading="lazy" decoding="async"></div>
           <div class="body"><h3>Paneer</h3><p>Multilayer lamination pouches</p></div>
-          <a class="ask" href="https://wa.me/918390135999?text=Hi%2C%20I%20want%20a%20quote%20for%20paneer%20packaging." target="_blank" rel="noopener" aria-label="Ask about Paneer on WhatsApp"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Ask</a>
+          <a class="ask" href="https://wa.me/918390135999?text=Hi%2C%20I%20want%20a%20quote%20for%20paneer%20packaging." target="_blank" rel="noopener noreferrer" aria-label="Ask about Paneer on WhatsApp"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Ask</a>
         </li>
         <li class="card" data-f="dairy">
-          <div class="pic"><img src="images/skon-lassi.webp" alt="Lassi packaging sample" width="338" height="480" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('broken')"></div>
+          <div class="pic"><img src="images/skon-lassi.webp" srcset="images/skon-lassi-sm.webp 169w, images/skon-lassi.webp 338w" sizes="(min-width: 1080px) 177px, (min-width: 820px) calc(20vw - 39px), (min-width: 560px) calc(33.3vw - 41px), calc(50vw - 42px)" alt="Lassi packaging sample" width="338" height="480" loading="lazy" decoding="async"></div>
           <div class="body"><h3>Lassi</h3><p>Pouches and film rolls, plain or printed</p></div>
-          <a class="ask" href="https://wa.me/918390135999?text=Hi%2C%20I%20want%20a%20quote%20for%20lassi%20packaging." target="_blank" rel="noopener" aria-label="Ask about Lassi on WhatsApp"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Ask</a>
+          <a class="ask" href="https://wa.me/918390135999?text=Hi%2C%20I%20want%20a%20quote%20for%20lassi%20packaging." target="_blank" rel="noopener noreferrer" aria-label="Ask about Lassi on WhatsApp"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Ask</a>
         </li>
         <li class="card" data-f="dairy">
-          <div class="pic"><img src="images/skon-taak.webp" alt="Taak packaging sample" width="480" height="423" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('broken')"></div>
+          <div class="pic"><img src="images/skon-taak.webp" srcset="images/skon-taak-sm.webp 240w, images/skon-taak.webp 480w" sizes="(min-width: 1080px) 177px, (min-width: 820px) calc(20vw - 39px), (min-width: 560px) calc(33.3vw - 41px), calc(50vw - 42px)" alt="Taak packaging sample" width="480" height="423" loading="lazy" decoding="async"></div>
           <div class="body"><h3>Taak</h3><p>Pouches and film rolls, plain or printed</p></div>
-          <a class="ask" href="https://wa.me/918390135999?text=Hi%2C%20I%20want%20a%20quote%20for%20taak%20packaging." target="_blank" rel="noopener" aria-label="Ask about Taak on WhatsApp"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Ask</a>
+          <a class="ask" href="https://wa.me/918390135999?text=Hi%2C%20I%20want%20a%20quote%20for%20taak%20packaging." target="_blank" rel="noopener noreferrer" aria-label="Ask about Taak on WhatsApp"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Ask</a>
         </li>
         <li class="card" data-f="dairy">
-          <div class="pic"><img src="images/skon-dahi.webp" alt="Dahi packaging sample" width="360" height="480" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('broken')"></div>
+          <div class="pic"><img src="images/skon-dahi.webp" srcset="images/skon-dahi-sm.webp 180w, images/skon-dahi.webp 360w" sizes="(min-width: 1080px) 177px, (min-width: 820px) calc(20vw - 39px), (min-width: 560px) calc(33.3vw - 41px), calc(50vw - 42px)" alt="Dahi packaging sample" width="360" height="480" loading="lazy" decoding="async"></div>
           <div class="body"><h3>Dahi</h3><p>Pouches and film rolls, plain or printed</p></div>
-          <a class="ask" href="https://wa.me/918390135999?text=Hi%2C%20I%20want%20a%20quote%20for%20dahi%20packaging." target="_blank" rel="noopener" aria-label="Ask about Dahi on WhatsApp"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Ask</a>
+          <a class="ask" href="https://wa.me/918390135999?text=Hi%2C%20I%20want%20a%20quote%20for%20dahi%20packaging." target="_blank" rel="noopener noreferrer" aria-label="Ask about Dahi on WhatsApp"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Ask</a>
         </li>
         <li class="card" data-f="frozen">
-          <div class="pic"><img src="images/skon-chocobar.webp" alt="Chocobar packaging sample" width="480" height="410" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('broken')"></div>
+          <div class="pic"><img src="images/skon-chocobar.webp" srcset="images/skon-chocobar-sm.webp 240w, images/skon-chocobar.webp 480w" sizes="(min-width: 1080px) 177px, (min-width: 820px) calc(20vw - 39px), (min-width: 560px) calc(33.3vw - 41px), calc(50vw - 42px)" alt="Chocobar packaging sample" width="480" height="410" loading="lazy" decoding="async"></div>
           <div class="body"><h3>Chocobar</h3><p>Multilayer ice cream pouches</p></div>
-          <a class="ask" href="https://wa.me/918390135999?text=Hi%2C%20I%20want%20a%20quote%20for%20chocobar%20packaging." target="_blank" rel="noopener" aria-label="Ask about Chocobar on WhatsApp"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Ask</a>
+          <a class="ask" href="https://wa.me/918390135999?text=Hi%2C%20I%20want%20a%20quote%20for%20chocobar%20packaging." target="_blank" rel="noopener noreferrer" aria-label="Ask about Chocobar on WhatsApp"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Ask</a>
         </li>
         <li class="card" data-f="frozen">
-          <div class="pic"><img src="images/skon-kulfi.webp" alt="Kulfi packaging sample" width="427" height="480" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('broken')"></div>
+          <div class="pic"><img src="images/skon-kulfi.webp" srcset="images/skon-kulfi-sm.webp 214w, images/skon-kulfi.webp 427w" sizes="(min-width: 1080px) 177px, (min-width: 820px) calc(20vw - 39px), (min-width: 560px) calc(33.3vw - 41px), calc(50vw - 42px)" alt="Kulfi packaging sample" width="427" height="480" loading="lazy" decoding="async"></div>
           <div class="body"><h3>Kulfi</h3><p>Multilayer ice cream pouches</p></div>
-          <a class="ask" href="https://wa.me/918390135999?text=Hi%2C%20I%20want%20a%20quote%20for%20kulfi%20packaging." target="_blank" rel="noopener" aria-label="Ask about Kulfi on WhatsApp"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Ask</a>
+          <a class="ask" href="https://wa.me/918390135999?text=Hi%2C%20I%20want%20a%20quote%20for%20kulfi%20packaging." target="_blank" rel="noopener noreferrer" aria-label="Ask about Kulfi on WhatsApp"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Ask</a>
         </li>
         <li class="card" data-f="bakery">
-          <div class="pic"><img src="images/skon-milk-toast.webp" alt="Milk toast packaging sample" width="480" height="336" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('broken')"></div>
+          <div class="pic"><img src="images/skon-milk-toast.webp" srcset="images/skon-milk-toast-sm.webp 240w, images/skon-milk-toast.webp 480w" sizes="(min-width: 1080px) 177px, (min-width: 820px) calc(20vw - 39px), (min-width: 560px) calc(33.3vw - 41px), calc(50vw - 42px)" alt="Milk toast packaging sample" width="480" height="336" loading="lazy" decoding="async"></div>
           <div class="body"><h3>Milk toast</h3><p>Lamination or PP rolls and pouches</p></div>
-          <a class="ask" href="https://wa.me/918390135999?text=Hi%2C%20I%20want%20a%20quote%20for%20milk%20toast%20packaging." target="_blank" rel="noopener" aria-label="Ask about Milk toast on WhatsApp"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Ask</a>
+          <a class="ask" href="https://wa.me/918390135999?text=Hi%2C%20I%20want%20a%20quote%20for%20milk%20toast%20packaging." target="_blank" rel="noopener noreferrer" aria-label="Ask about Milk toast on WhatsApp"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Ask</a>
         </li>
         <li class="card" data-f="oil">
-          <div class="pic"><img src="images/skon-edible-oil.webp" alt="Edible oil packaging sample" width="480" height="401" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('broken')"></div>
+          <div class="pic"><img src="images/skon-edible-oil.webp" srcset="images/skon-edible-oil-sm.webp 240w, images/skon-edible-oil.webp 480w" sizes="(min-width: 1080px) 177px, (min-width: 820px) calc(20vw - 39px), (min-width: 560px) calc(33.3vw - 41px), calc(50vw - 42px)" alt="Edible oil packaging sample" width="480" height="401" loading="lazy" decoding="async"></div>
           <div class="body"><h3>Edible oil</h3><p>Oil packing film</p></div>
-          <a class="ask" href="https://wa.me/918390135999?text=Hi%2C%20I%20want%20a%20quote%20for%20edible%20oil%20packaging." target="_blank" rel="noopener" aria-label="Ask about Edible oil on WhatsApp"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Ask</a>
+          <a class="ask" href="https://wa.me/918390135999?text=Hi%2C%20I%20want%20a%20quote%20for%20edible%20oil%20packaging." target="_blank" rel="noopener noreferrer" aria-label="Ask about Edible oil on WhatsApp"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Ask</a>
         </li>
       </ul>
 
@@ -649,9 +671,9 @@ dd { overflow-wrap: anywhere; font-variant-numeric: tabular-nums; }
       <div class="contact reveal">
         <a class="crow" href="tel:+919762476111"><svg class="ico" aria-hidden="true"><use href="#i-call"/></svg><span><small>Phone</small>+91 97624 76111</span></a>
         <a class="crow" href="tel:+919561502888"><svg class="ico" aria-hidden="true"><use href="#i-call"/></svg><span><small>Phone</small>+91 95615 02888</span></a>
-        <a class="crow" href="https://wa.me/918390135999" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg><span><small>WhatsApp</small>+91 83901 35999</span></a>
+        <a class="crow" href="https://wa.me/918390135999" target="_blank" rel="noopener noreferrer"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg><span><small>WhatsApp</small>+91 83901 35999</span></a>
         <a class="crow wide" href="mailto:skonflexipack@gmail.com"><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg><span><small>Email</small>skonflexipack@gmail.com</span></a>
-        <a class="crow wide" href="https://maps.app.goo.gl/5sp3PX61pRtbHCm76" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-map"/></svg><span><small>Factory (open in Maps)</small>Gut No. 12, Plot 30 to 37, M Sector, MIDC Waluj, behind Mahavitran Substation, opp. Verroc Plant 8, Jogeshwari, Chh. Sambhajinagar 431136</span></a>
+        <a class="crow wide" href="https://maps.app.goo.gl/5sp3PX61pRtbHCm76" target="_blank" rel="noopener noreferrer"><svg class="ico" aria-hidden="true"><use href="#i-map"/></svg><span><small>Factory (open in Maps)</small>Gut No. 12, Plot 30 to 37, M Sector, MIDC Waluj, behind Mahavitran Substation, opp. Verroc Plant 8, Jogeshwari, Chh. Sambhajinagar 431136</span></a>
         <details class="crow wide">
           <summary>Company details</summary>
           <dl>
@@ -673,78 +695,8 @@ dd { overflow-wrap: anywhere; font-variant-numeric: tabular-nums; }
 
 <div class="dock">
   <a class="btn line" href="tel:+919762476111"><svg class="ico" aria-hidden="true"><use href="#i-call"/></svg>Call</a>
-  <a class="btn wa" href="https://wa.me/918390135999?text=Hi%2C%20I%20want%20a%20quote%20for%20packaging." target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Get a quote</a>
+  <a class="btn wa" href="https://wa.me/918390135999?text=Hi%2C%20I%20want%20a%20quote%20for%20packaging." target="_blank" rel="noopener noreferrer"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Get a quote</a>
 </div>
 
-<script>
-(function () {
-  var root = document.documentElement;
-
-  /* Product filters */
-  var list = document.getElementById("products-list");
-  var status = document.getElementById("filter-status");
-  var cards = list.querySelectorAll(".card");
-  var filts = document.querySelectorAll(".filt");
-  filts.forEach(function (b) {
-    b.addEventListener("click", function () {
-      var f = b.getAttribute("data-f"), shown = 0;
-      filts.forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
-      cards.forEach(function (li) {
-        var on = f === "all" || li.getAttribute("data-f") === f;
-        li.hidden = !on;
-        if (on) shown++;
-      });
-      status.textContent = "Showing " + shown + " of " + cards.length + " products";
-    });
-  });
-
-  /* Mobile menu */
-  var menuBtn = document.getElementById("menu-btn"), menu = document.getElementById("menu");
-  function setMenu(open) {
-    menu.classList.toggle("open", open);
-    menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
-    menuBtn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
-  }
-  menuBtn.addEventListener("click", function () { setMenu(menuBtn.getAttribute("aria-expanded") !== "true"); });
-  menu.addEventListener("click", function (e) { if (e.target.closest("a")) setMenu(false); });
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && menu.classList.contains("open")) { setMenu(false); menuBtn.focus(); }
-  });
-  document.addEventListener("click", function (e) {
-    if (menu.classList.contains("open") && !e.target.closest(".head")) setMenu(false);
-  });
-
-  /* Theme */
-  var tb = document.getElementById("theme"), meta = document.querySelector('meta[name="theme-color"]');
-  function sync() {
-    var dark = root.getAttribute("data-theme") === "dark";
-    tb.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
-    meta.setAttribute("content", dark ? "#0e1528" : "#ffffff");
-  }
-  tb.addEventListener("click", function () {
-    var dark = root.getAttribute("data-theme") === "dark";
-    if (dark) root.removeAttribute("data-theme"); else root.setAttribute("data-theme", "dark");
-    try { localStorage.setItem("skon-theme", dark ? "light" : "dark"); } catch (e) {}
-    sync();
-  });
-  sync();
-
-  /* Scroll reveal */
-  var rev = document.querySelectorAll(".reveal");
-  if ("IntersectionObserver" in window) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
-      });
-    }, { rootMargin: "0px 0px -8% 0px" });
-    rev.forEach(function (el) { io.observe(el); });
-  } else {
-    rev.forEach(function (el) { el.classList.add("in"); });
-  }
-
-  document.getElementById("press").classList.add("ink-in");
-  document.getElementById("yr").textContent = new Date().getFullYear();
-})();
-</script>
 </body>
 </html>

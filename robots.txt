@@ -1,0 +1,7 @@
+# Search engines only read robots.txt at the root of a site
+# (falakpat3l.github.io/robots.txt), so this copy is for when the site
+# moves to its own domain. It allows everything and points to the sitemap.
+User-agent: *
+Allow: /
+
+Sitemap: https://falakpat3l.github.io/skon-flexipack/sitemap.xml
